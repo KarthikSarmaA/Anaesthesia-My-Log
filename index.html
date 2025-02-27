@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Anesthetist Log</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Anesthesia Case Log</h2>
+
+    <form id="anesthesiaForm">
+        <input type="hidden" id="editIndex">
+
+        <label>Case ID:</label>
+        <input type="text" id="caseId" required>
+
+        <label>Age/Sex:</label>
+        <input type="text" id="ageSex" required>
+
+        <label>Procedure Type:</label>
+        <input type="text" id="procedureType" required>
+
+        <label>ASA Classification:</label>
+        <select id="asaClass">
+            <option value="ASA I">ASA I (Healthy)</option>
+            <option value="ASA II">ASA II (Mild Disease)</option>
+            <option value="ASA III">ASA III (Severe Disease)</option>
+            <option value="ASA IV">ASA IV (Life-threatening)</option>
+            <option value="ASA V">ASA V (Moribund)</option>
+        </select>
+
+        <label>Anesthesia Type:</label>
+        <select id="anesthesiaType">
+            <option value="General Anesthesia">General Anesthesia</option>
+            <option value="Spinal Anesthesia">Spinal Anesthesia</option>
+            <option value="Epidural Anesthesia">Epidural Anesthesia</option>
+            <option value="Regional Block">Regional Block</option>
+            <option value="Sedation">Sedation</option>
+        </select>
+
+        <label>Airway Management:</label>
+        <input type="text" id="airwayManagement">
+
+        <label>Intraoperative Details:</label>
+        <textarea id="intraopDetails"></textarea>
+
+        <label>Post-op Notes:</label>
+        <textarea id="postOpNotes"></textarea>
+
+        <button type="submit">Save Entry</button>
+    </form>
+
+    <h2>Saved Cases</h2>
+    <button onclick="printLog()">Print / Save as PDF</button>
+
+    <table id="logTable">
+        <tr>
+            <th>Case ID</th>
+            <th>Age/Sex</th>
+            <th>Procedure</th>
+            <th>ASA Class</th>
+            <th>Anesthesia Type</th>
+            <th>Actions</th>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
